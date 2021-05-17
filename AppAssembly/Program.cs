@@ -16,6 +16,13 @@ namespace AppAssembly
             {
                 Console.WriteLine($"{mi.DeclaringType} {mi.MemberType} {mi.Name}");
             }
+
+            
+            Assembly assem = Assembly.LoadFrom("./NixDll_2.dll");
+
+            Console.WriteLine("Assembly Full Name:");
+            Console.WriteLine(assem.FullName);
+
             Console.ReadKey();
         }
     }

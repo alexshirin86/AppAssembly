@@ -18,11 +18,7 @@ namespace AppAssembly
             }
 
             
-            Assembly assem = Assembly.LoadFrom("./NixDll_2.dll");
-
-            Console.WriteLine("Assembly Full Name:");
-            Console.WriteLine(assem.FullName);
-
+            
             Console.ReadKey();
         }
     }

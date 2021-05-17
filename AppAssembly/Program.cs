@@ -8,16 +8,19 @@ namespace AppAssembly
     {
         static void Main(string[] args)
         {
-            Type myType1 = typeof(User1);
+                                   
+            Assembly assem = Assembly.LoadFrom("./NixDll_1.dll");
 
-            //Type myType2 = Type.GetType(myType1.ToString(), false, true);
+            Console.WriteLine($"Assembly Full Name: {assem.FullName}");
+            Console.WriteLine($"Assembly Version: {assem.ImageRuntimeVersion}");
 
-            foreach (MemberInfo mi in myType1.GetMembers())
+            foreach ( Type myType in assem.GetTypes() )
             {
-                Console.WriteLine($"{mi.DeclaringType} {mi.MemberType} {mi.Name}");
+                foreach (MemberInfo mi in myType.GetMembers())
+                {
+                    Console.WriteLine($"{mi.DeclaringType} {mi.MemberType} {mi.Name}");
+                }
             }
-
-            
             
             Console.ReadKey();
         }
